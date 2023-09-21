@@ -8,7 +8,40 @@
   </head>
   <body>    
     <script>
+      //All operators that can be inputted
+      const arrOperator = ['+', '-', '*', '/'];
 
+      // Prompt for user to input first and second number, parseInt to recognise the input as a number
+      const inputNum1 = parseInt(prompt('Please input the first number')) //First number
+      const inputNum2 = parseInt(prompt('Please input the second number')) //Second number
+      const inputOp = prompt('Please input the the operator you would like to use') //Operator to use
+
+      function calculator(inputNum1, inputNum2, inputOp) {
+          switch(inputOp) {
+            case '+':
+              return inputNum1 + inputNum2;
+            case '-':
+              return inputNum1 - inputNum2; 
+            case '*':
+              return inputNum1 * inputNum2; 
+            case '/':
+              return inputNum1 / inputNum2;  
+        }
+      }
+    
+      alert(`The answer to the calculation ${inputNum1} ${inputOp} ${inputNum2} is =` + " " + calculator(inputNum1, inputNum2, inputOp))
     </script>
   </body>
 </html>
+
+        
+// if ((arrOperator == inputOp)) {
+  //   alert(`You did not input a correct opperator10
+  //   Please select one of the follwing: ${arrOperator}
+  //   Selecting "Ok" will reload the order`)
+  //   location.reload() //Prompt will reload once OK is selected
+  // }
+  // // else if () {
+
+  // // }
+  // else

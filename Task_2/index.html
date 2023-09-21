@@ -8,7 +8,51 @@
   </head>
   <body>    
     <script>
+      //arrays to validate the correct inputs 
+      const arrSize = ['Small', 'Medium', 'Large'];
+      const arrFlavour = ['Cola', 'Lemon', 'Orange'];
+      
+      // Prompts to enter Size & flavour
+      const inputSize = prompt(`Please enter a Size.
+      Sizes available are ${arrSize}`) //Shows the sizes available in the array, to prevent wrong information being inputted
+      const inputFlavour = prompt(`Please enter a Flavour.
+      Flavour available are ${arrFlavour}`) //Shows the flavours available in the array, to prevent wrong information being inputted
 
+      function drinkOrder(size, drink){
+        let softDrinkLabel;
+
+        if (!(arrSize.find((s) => s.toLowerCase() === size.toLowerCase()))) { //Checking the input of arrSize to match, adding validation so the user can input in any case
+          alert(`You did not input an available size!
+          Please select ${arrSize}
+          Selecting "Ok" will reload the order`) //Shows the sizes available in the array again, to prevent wrong information being inputted the next time
+          location.reload() //Prompt will reload once OK is selected
+
+        } else if (!(arrFlavour.find((f) => f.toLowerCase() === drink.toLowerCase()))) { //Checking the input of arrFlavour to match, adding validation so the user can input in any case
+          alert(`You did not input an available flavour!
+          Please select ${arrFlavour}
+          Selecting "Ok" will reload the order`) //Shows the flavours available in the array again, to prevent wrong information being inputted the next time
+          location.reload() //Prompt will reload once OK is selected
+
+        } else {
+          switch (drink) {
+          case 'lemon':
+            softDrinkLabel = 'Lemonade'; //When "Lemon" is inputted the output in 
+            break;    
+
+          case 'orange':
+            softDrinkLabel = 'Orangeade';
+            break;
+
+          default:
+            softDrinkLabel = 'Cola'
+            break;
+          }
+          
+          alert(`You have ordered a ${size} ${softDrinkLabel}.`)
+        }
+      }
+
+      drinkOrder(inputSize, inputFlavour);
     </script>
   </body>
 </html>
